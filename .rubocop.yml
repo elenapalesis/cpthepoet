@@ -1,0 +1,266 @@
+# Rubocop comes with most cops enabled and some disabled by default.
+# Our style guide does not match these defaults and sometimes the cops have too
+# many false positives, so we explicitly enable/disable some cops below.
+
+AbcSize:
+  Enabled: false
+
+AccessorMethodName:
+  Enabled: false
+
+Alias:
+  EnforcedStyle: prefer_alias_method
+
+AlignArray:
+  Enabled: false
+
+AlignHash:
+  Enabled: false
+
+AlignParameters:
+  Enabled: false
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    # Exempt auto-generated and third-party files from style guidelines.
+    - bin/*
+    - node_modules/**/*
+    - db/schema.rb
+    - vendor/**/*
+  TargetRailsVersion: 4.2
+  TargetRubyVersion: 2.4
+
+AmbiguousBlockAssociation:
+  Enabled: false
+
+AmbiguousOperator:
+  Enabled: false
+
+AmbiguousRegexpLiteral:
+  Enabled: false
+
+AsciiComments:
+  Enabled: false
+
+AssignmentInCondition:
+  Enabled: false
+
+BlockLength:
+  Enabled: false
+
+BracesAroundHashParameters:
+  EnforcedStyle: context_dependent
+
+CaseIndentation:
+  EnforcedStyle: end
+
+ClassAndModuleChildren:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+CollectionMethods:
+  Enabled: false
+
+CyclomaticComplexity:
+  Enabled: false
+
+Delegate:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+DotPosition:
+  EnforcedStyle: trailing
+
+DoubleNegation:
+  Enabled: false
+
+DynamicFindBy:
+  Enabled: false
+
+EmptyLineBetweenDefs:
+  AllowAdjacentOneLineDefs: true
+
+EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+FilePath:
+  Enabled: false
+
+FirstParameterIndentation:
+  Enabled: false
+
+FormatString:
+  EnforcedStyle: percent
+
+FormatStringToken:
+  Enabled: false
+
+# Disabled because it clutters up the source and Ruby 3.0 makes it the default:
+FrozenStringLiteralComment:
+  Enabled: false
+
+GuardClause:
+  Enabled: false
+
+HandleExceptions:
+  Enabled: false
+
+HasAndBelongsToMany:
+  Enabled: false
+
+# We should enable this, but it requires some thought to fix all the violations:
+HasManyOrHasOneDependent:
+  Enabled: false
+
+IfUnlessModifier:
+  Enabled: false
+
+IndentArray:
+  EnforcedStyle: consistent
+
+IndentHash:
+  Enabled: false
+
+Lambda:
+  Enabled: false
+
+LineLength:
+  Max: 100
+
+Loop:
+  Enabled: false
+
+MethodCallWithArgsParentheses:
+  Enabled: true
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - app/views/**/*
+    - bin/*
+    - config.ru
+    - config/**/*
+    - db/migrate/*
+    - lib/tasks/*
+    - spec/**/*
+    - test/**/*
+  IgnoreMacros: true
+  IgnoredMethods:
+    - require
+
+MethodCalledOnDoEndBlock:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+MethodMissing:
+  Enabled: false
+
+ModuleLength:
+  Enabled: false
+
+MultilineMethodCallBraceLayout:
+  Enabled: false
+
+MultilineMethodCallIndentation:
+  Enabled: false
+
+MultilineOperationIndentation:
+  Enabled: false
+
+# Disabled because .freeze clutters up the code; gems should use this:
+MutableConstant:
+  Enabled: false
+
+Next:
+  Enabled: false
+
+NotNullColumn:
+  Enabled: false
+
+NumericLiterals:
+  Enabled: false
+
+OutputSafety:
+  Exclude:
+    - test/**/*
+    - spec/**/*
+
+ParallelAssignment:
+  Enabled: false
+
+ParameterLists:
+  Enabled: false
+
+ParenthesesAsGroupedExpression:
+  Enabled: false
+
+PerceivedComplexity:
+  Enabled: false
+
+PercentLiteralDelimiters:
+  Enabled: false
+
+PredicateName:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+RedundantMerge:
+  MaxKeyValuePairs: 1
+
+# This is a bit too aggressive as of 0.49.0, since it converts assignment:
+Style/SafeNavigation:
+  Enabled: false
+
+# We use update_all intentionally in a bunch of places, which this doesn't like:
+SkipsModelValidations:
+  Enabled: false
+
+SignalException:
+  Enabled: false
+
+StructInheritance:
+  Enabled: false
+
+# As of 0.49.0 this tries to convert arrays nested inside method parameters with symbols
+# (like from permit), which doesn't look good:
+SymbolArray:
+  Enabled: false
+
+SymbolProc:
+  IgnoredMethods:
+    - open
+
+TernaryParentheses:
+  Enabled: false
+
+TrivialAccessors:
+  AllowPredicates: true
+
+UnknownEnv:
+  Enabled: false
+
+UnusedBlockArgument:
+  Enabled: false
+
+UnusedMethodArgument:
+  Enabled: false
+
+UselessAssignment:
+  Enabled: false
+
+VariableNumber:
+  Enabled: false
+
+WhileUntilModifier:
+  Enabled: false
+
+WordArray:
+  MinSize: 3

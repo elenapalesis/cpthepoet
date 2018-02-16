@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS', 2) %>
+  statement_limit: <%= ENV.fetch('DB_STATEMENT_LIMIT', '100') %>
+  url: <%= ENV['DATABASE_URL'] %>
+  variables:
+    statement_timeout: <%= ENV.fetch('DB_STATEMENT_TIMEOUT', '30s') %>
+
+development:
+  <<: *default
+  database: christophoros_paleshis_development
+
+production:
+  <<: *default
+  database: christophoros_paleshis_production
+  password: <%= ENV['CHRISTOPHOROS_PALESHIS_DATABASE_PASSWORD'] %>
+
+test:
+  <<: *default
+  database: christophoros_paleshis_test
