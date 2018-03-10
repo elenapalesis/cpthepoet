@@ -1,0 +1,5 @@
+%h1 poems
+%ul
+  - @poems.each do |poem|
+    %li
+      = "#{poem.greek_title} (#{poem.english_title})"
