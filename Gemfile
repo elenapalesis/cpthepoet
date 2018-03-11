@@ -19,7 +19,7 @@ end
 group :test do
   gem 'capybara', '~> 2.18.0'
   gem 'database_rewinder', '~> 0.8.3'
-  gem 'factory_bot', '~> 4.8.2'
+  gem 'factory_bot_rails', '~> 4.8.2'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git',
     branch: 'rails-5'
 end
