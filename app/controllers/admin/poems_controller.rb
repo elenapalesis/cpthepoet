@@ -1,6 +1,6 @@
 class Admin::PoemsController < ApplicationController
   def index
-    # instantiate poem for use in new poem form (#create action)
+    # instantiate poem for use in "Create poem" form (#create action)
     @poem = Poem.new
 
     @poems = Poem.order(:id)
@@ -16,7 +16,6 @@ class Admin::PoemsController < ApplicationController
         'Poem creation failed.'
       end
 
-    # after submitting new poem, redirect back to poems index
     redirect_to(admin_poems_path)
   end
 
