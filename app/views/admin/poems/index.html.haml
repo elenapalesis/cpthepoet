@@ -1,4 +1,7 @@
-%h1 poems
+- if flash[:notice]
+  %p
+    = flash[:notice]
+%h1 Poems
 %ul
   - @poems.each do |poem|
     %li

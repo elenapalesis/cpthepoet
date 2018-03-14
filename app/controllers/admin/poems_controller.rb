@@ -8,7 +8,13 @@ class Admin::PoemsController < ApplicationController
 
   def create
     @poem = Poem.new(poem_params)
-    @poem.save
+
+    flash[:notice] =
+      if @poem.save
+        'Poem successfully created!'
+      else
+        'Poem creation failed.'
+      end
 
     # after submitting new poem, redirect back to poems index
     redirect_to(admin_poems_path)

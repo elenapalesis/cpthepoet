@@ -12,5 +12,6 @@ feature 'Admin creates a new poem' do
     click_button 'Create Poem'
 
     expect(page).to have_selector('li', text: 'Titlos Alpha (Title A)')
+    expect(page).to have_selector('p', text: 'Poem successfully created!')
   end
 end
