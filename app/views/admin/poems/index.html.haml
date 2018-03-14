@@ -1,5 +1,35 @@
-%h1 poems
+- if flash[:notice]
+  %p
+    = flash[:notice]
+%h1 Poems
 %ul
   - @poems.each do |poem|
     %li
       = "#{poem.greek_title} (#{poem.english_title})"
+
+%h1 Add poem
+= form_for [:admin, @poem] do |f|
+  = f.label :greek_title
+  %br
+  = f.text_field :greek_title
+  %br
+
+  = f.label :english_title
+  %br
+  = f.text_field :english_title
+  %br
+
+  = f.label :greek_body
+  %br
+  = f.text_area :greek_body
+  %br
+
+  = f.label :english_body
+  %br
+  = f.text_area :english_body
+  %br
+
+  = f.check_box :published
+  = f.label :published
+  %br
+  = f.submit
